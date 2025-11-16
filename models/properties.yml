@@ -1,0 +1,18 @@
+sources:
+ - name: 'owais resources'
+   database: SNOWFLAKEDBT
+   schema: DEMO
+   tables:
+   
+    - name: USERS
+
+
+models:
+ - name: user1
+   config:
+     materialized: 'table'
+ - name: user2
+   config:
+     materialiszed: 'view'
+  
+  

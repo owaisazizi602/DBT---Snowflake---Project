@@ -1,2 +1,2 @@
 select *
-from SNOWFLAKEDBT.DEMO.USERS
+from {{source("owais resources","USERS")}}
