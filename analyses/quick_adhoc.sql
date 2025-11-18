@@ -1,0 +1,11 @@
+select *
+from SNOWFLAKEDBT.DEMO.USERS
+union all
+select *
+from SNOWFLAKEDBT.DEMO.USERS
+union all
+select *
+from SNOWFLAKEDBT.DEMO.USERS
+union all
+select *
+from SNOWFLAKEDBT.DEMO.USERS
