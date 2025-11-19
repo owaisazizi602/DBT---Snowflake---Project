@@ -1,21 +1,18 @@
 sources:
- - name: 'owais resources'
-   database: SNOWFLAKEDBT
-   schema: DEMO
-   tables:
-   
-    - name: USERS
-
+  - name: "owais resources"
+    database: SNOWFLAKEDBT
+    schema: DEMO
+    tables:
+      - name: USERS
+      - name: Payment_Modes
 
 models:
- - name: user1
-   config:
-     materialized: 'table'
- - name: user2
-   config:
-     materialiszed: 'view'
- - name: user2cust_mazeralized_ephemeral
-   config:
-     materialiszed: 'ephemeral'
-
-  
+  - name: user1
+    config:
+      materialized: "table"
+  - name: user2
+    config:
+      materialiszed: "view"
+  - name: user2cust_mazeralized_ephemeral
+    config:
+      materialiszed: "ephemeral"
