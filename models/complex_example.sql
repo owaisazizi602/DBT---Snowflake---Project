@@ -27,3 +27,38 @@ SELECT
 SUM(CASE WHEN PAYMENT_MODE='{{i}}' THEN SALES END) AS {{i}}_sales,
 {% endfor %}
 FROM {{source("owais resources","Payment_Mode")}}
+
+
+
+
+{% set payment_modes=dbt_utils.get_column_values(source("owais resources",'PAYMENT_MODES'),'PAYMENT_MODES') %} 
+{{PAYMENT_MODES}}
+SELECT
+{% for i in payment_modes %}
+SUM(CASE WHEN PAYMENT_MODE='{{i}}' THEN SALES END) AS {{i}}_sales {%- if not loop-last -%},{% endif %}
+{% endfor %}
+FROM {{source("owais resources","Payment_Mode")}}
+
+---upper case
+
+
+
+{% set payment_modes=dbt_utils.get_column_values(source("owais resources",'PAYMENT_MODES'),'PAYMENT_MODES') %} 
+{{PAYMENT_MODES}}
+SELECT
+{% for i in payment_modes %}
+SUM(CASE WHEN PAYMENT_MODE='{{i}}' THEN SALES END) AS {{i}}_sales {%- if not loop-last -%},{% endif %}
+{% endfor %}
+FROM {{source("owais resources","Payment_Mode")}}
+
+----Adding comma in different wa-----
+
+
+{% set payment_modes=dbt_utils.get_column_values(source("owais resources",'PAYMENT_MODES'),'PAYMENT_MODES') %} 
+{{PAYMENT_MODES}}
+SELECT
+{% for i in payment_modes %}
+SUM(CASE WHEN PAYMENT_MODE='{{i}}' THEN SALES END) AS {{i}}_sales
+{% if loop.index < loop.length %},{% endif %}
+{% endfor %}
+FROM {{source("owais resources","Payment_Mode")}}
