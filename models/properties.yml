@@ -16,3 +16,5 @@ models:
   - name: user2cust_mazeralized_ephemeral
     config:
       materialiszed: "ephemeral"
+
+      
